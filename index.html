@@ -6,10 +6,34 @@
     <title>Thank you Mimaropa!</title>
     <link rel="stylesheet" href="special.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        .button-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="slogan-grid">
-
+    <div class="slogan-grid" id="content">
         <div class="slogan-container">
             <h1 class="slogan">James</h1>
             <p class="subtitle">
@@ -20,7 +44,7 @@
             </p>
             <p class="subtitle">It's me, James Asuncion</p>
         </div>
-
+        <!-- Add the other slogan-container elements here -->
         <div class="slogan-container">
             <h1 class="slogan">Caleb</h1>
             <p class="subtitle">
@@ -129,7 +153,29 @@
                 <strong>Isidro, Arlvin Alador</strong><br>
                 Until we meet again — Thank you, <strong>DOST-Mimaropa!</strong></p>
         </div>
-
     </div>
+
+    <div class="image-container hidden" id="imageSection">
+        <img src="image.png" alt="Thank You Image">
+    </div>
+
+    <div class="button-container">
+        <button onclick="showImage()">Kamay ni Ma'am Mendy</button>
+        <button class="hidden" id="backButton" onclick="showContent()">Go Back</button>
+    </div>
+
+    <script>
+        function showImage() {
+            document.getElementById('content').classList.add('hidden');
+            document.getElementById('imageSection').classList.remove('hidden');
+            document.getElementById('backButton').classList.remove('hidden');
+        }
+
+        function showContent() {
+            document.getElementById('content').classList.remove('hidden');
+            document.getElementById('imageSection').classList.add('hidden');
+            document.getElementById('backButton').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
